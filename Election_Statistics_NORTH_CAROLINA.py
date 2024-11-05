@@ -62,10 +62,10 @@ while True:
                 ]
             if(first_iteration):
                 DataFrame([current_row],columns=['Total_Votes','KH_Vote_Count','KH_Vote_Pct','DT_Vote_Count','DT_Vote_Pct','Pct_Reported'],index=[extraction_time])\
-                    .to_csv(f'State_Details/Wisconsin/{line.replace("-","_").replace(" ","_")}_Results.csv',
+                    .to_csv(f'State_Details/North_Carolina/{line.replace("-","_").replace(" ","_")}_Results.csv',
                             mode='w',header=True,index=True,float_format='%.3f')
                 first_iteration:bool = False
             else:
                 DataFrame([current_row],columns=['Total_Votes','KH_Vote_Count','KH_Vote_Pct','DT_Vote_Count','DT_Vote_Pct','Pct_Reported'],index=[extraction_time])\
-                    .to_csv(f'State_Details/Wisconsin/{line.replace("-","_").replace(" ","_")}_Results.csv',
+                    .to_csv(f'State_Details/North_Carolina/{line.replace("-","_").replace(" ","_")}_Results.csv',
                             mode='a',header=False,index=True,float_format='%.3f')
