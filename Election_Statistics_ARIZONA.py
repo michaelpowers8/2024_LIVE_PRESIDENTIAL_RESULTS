@@ -64,12 +64,12 @@ while True:
             
             if(first_iteration):
                 DataFrame([current_row],columns=['Total_Votes','KH_Vote_Count','KH_Vote_Pct','DT_Vote_Count','DT_Vote_Pct','Pct_Reported'],index=[extraction_time])\
-                    .to_csv(f'C:/Users/michael/Documents/Election_Statistics/dist/State_Details/Arizona/{line.replace("-","_").replace(" ","_")}.csv',
+                    .to_csv(f'C:/Users/michael/Documents/Election_Statistics/2024_LIVE_PRESIDENTIAL_RESULTS/State_Details/Arizona/{line.replace("-","_").replace(" ","_")}.csv',
                             mode='w',header=True,index=True,float_format='%.3f')
                 current_row:list = []
             else:
                 DataFrame([current_row],columns=['Total_Votes','KH_Vote_Count','KH_Vote_Pct','DT_Vote_Count','DT_Vote_Pct','Pct_Reported'],index=[extraction_time])\
-                    .to_csv(f'C:/Users/michael/Documents/Election_Statistics/dist/State_Details/Arizona/{line.replace("-","_").replace(" ","_")}.csv',
+                    .to_csv(f'C:/Users/michael/Documents/Election_Statistics/2024_LIVE_PRESIDENTIAL_RESULTS/State_Details/Arizona/{line.replace("-","_").replace(" ","_")}.csv',
                             mode='a',header=False,index=True,float_format='%.3f')
         if('Yuma' in line):
             first_iteration:bool = False
