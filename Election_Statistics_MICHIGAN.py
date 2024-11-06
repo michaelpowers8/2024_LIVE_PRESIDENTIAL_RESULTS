@@ -5,7 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from datetime import datetime
 from pandas import DataFrame
 from random import random
-from re import search,sub
+from re import search,findall,sub
 from time import sleep
 
 # WebDriver Chrome
@@ -30,7 +30,6 @@ wait:WebDriverWait = WebDriverWait(driver,(random()*4)+2)
 page:str = wait.until(
         EC.presence_of_element_located(
             (By.XPATH, "/html/body"))).text
-sleep(45)
 first_iteration:bool = True
 counties_found:bool = False
 while True:
@@ -52,20 +51,33 @@ while True:
         if('Exit Polls' in line):
             break
         if(counties_found and line.upper().__eq__(line) and not(search(r"[0-9]+",line)) and not(line.isspace()) and len(line)>3):
-            current_row = [
-                    int(search(r"[0-9]+",sub(r"[A-Za-z]+","",lines[i+1]).replace(',','').replace('.','').replace('%','')).group()),
-                    int(search(r"[0-9]+",lines[i+5]).group()),
-                    float(search(r"[0-9]+\.[0-9]+",lines[i+6]).group()),
-                    int(search(r"[0-9]+",lines[i+9]).group()),
-                    float(search(r"[0-9]+\.[0-9]+",lines[i+10]).group()),
-                    float(search(r"[0-9]+[\.]{0,1}[0-9]{0,2}\%",lines[i+2]).group().replace(' ','').replace('%',''))
-                ]
-            if(first_iteration):
-                DataFrame([current_row],columns=['Total_Votes','KH_Vote_Count','KH_Vote_Pct','DT_Vote_Count','DT_Vote_Pct','Pct_Reported'],index=[extraction_time])\
-                    .to_csv(f'State_Details/Michigan/{line.replace("-","_").replace(" ","_")}_Results.csv',
-                            mode='w',header=True,index=True,float_format='%.3f')
-                first_iteration:bool = False
-            else:
-                DataFrame([current_row],columns=['Total_Votes','KH_Vote_Count','KH_Vote_Pct','DT_Vote_Count','DT_Vote_Pct','Pct_Reported'],index=[extraction_time])\
-                    .to_csv(f'State_Details/Michigan/{line.replace("-","_").replace(" ","_")}_Results.csv',
-                            mode='a',header=False,index=True,float_format='%.3f')
+            leading_candidate = lines[i+3]
+            try:
+                if('Harris' in leading_candidate):
+                    current_row = [
+                        int(search(r"[0-9]+",sub(r"[A-Za-z]+","",lines[i+1]).replace(',','').replace('.','').replace('%','')).group()),
+                        int(search(r"[0-9]+",lines[i+5].replace(',','').replace('.','').replace('%','')).group()),
+                        float(search(r"[0-9]+\.[0-9]+",lines[i+6]).group()),
+                        int(search(r"[0-9]+",lines[i+9].replace(',','').replace('.','').replace('%','')).group()),
+                        float(search(r"[0-9]+\.[0-9]+",lines[i+10]).group()),
+                        float(search(r"[0-9]+[\.]{0,1}[0-9]{0,2}\%",lines[i+2]).group().replace(' ','').replace('%',''))
+                    ]
+                else:
+                    current_row = [
+                        int(search(r"[0-9]+",sub(r"[A-Za-z]+","",lines[i+1]).replace(',','').replace('.','').replace('%','')).group()),
+                        int(search(r"[0-9]+",lines[i+9].replace(',','').replace('.','').replace('%','')).group()),
+                        float(search(r"[0-9]+\.[0-9]+",lines[i+10]).group()),
+                        int(search(r"[0-9]+",lines[i+5].replace(',','').replace('.','').replace('%','')).group()),
+                        float(search(r"[0-9]+\.[0-9]+",lines[i+6]).group()),
+                        float(search(r"[0-9]+[\.]{0,1}[0-9]{0,2}\%",lines[i+2]).group().replace(' ','').replace('%',''))
+                    ]
+                if(first_iteration):
+                    DataFrame([current_row],columns=['Total_Votes','KH_Vote_Count','KH_Vote_Pct','DT_Vote_Count','DT_Vote_Pct','Pct_Reported'],index=[extraction_time])\
+                        .to_csv(f'State_Details/Michigan/{line.replace("-","_").replace(" ","_")}_Results.csv',
+                                mode='w',header=True,index=True,float_format='%.3f')
+                    first_iteration:bool = False
+                else:
+                    DataFrame([current_row],columns=['Total_Votes','KH_Vote_Count','KH_Vote_Pct','DT_Vote_Count','DT_Vote_Pct','Pct_Reported'],index=[extraction_time])\
+                        .to_csv(f'State_Details/Michigan/{line.replace("-","_").replace(" ","_")}_Results.csv',
+                                mode='a',header=False,index=True,float_format='%.3f')
+            except:pass

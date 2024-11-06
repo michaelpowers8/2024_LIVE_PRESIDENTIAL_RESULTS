@@ -34,7 +34,7 @@ states:list[str] = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "C
 driver:Chrome = Chrome(options=options)
 sleep(4.53298)
 driver.get("https://www.foxnews.com/elections")
-first_iteration:bool = True
+first_iteration:bool = False
 sleep(3.32382901)
 while True:
     sleep(random()*13.329104+11.430829)
@@ -51,20 +51,34 @@ while True:
             all_states_found:bool = True
         if(all_states_found):
             if(line in states):
-                current_row:list = [
-                        int(findall(r"[0-9]+",lines[i+5].replace(',','').replace('-','0'))[0]),
-                        float(findall(r"[0-9]+",lines[i+5].replace(',','').replace('-','0'))[1]),
-                        int(findall(r"[0-9]+",lines[i+8].replace(',','').replace('-','0'))[0]),
-                        float(findall(r"[0-9]+",lines[i+8].replace(',','').replace('-','0'))[1])
-                    ]
-                if(first_iteration):
-                    DataFrame([current_row],columns=['KH_Vote_Count','KH_Vote_Pct','DT_Vote_Count','DT_Vote_Pct'],index=[extraction_time])\
-                        .to_csv(f'C:/Users/michael/Documents/Election_Statistics/2024_LIVE_PRESIDENTIAL_RESULTS/State_Summary_Results/{line.replace("-","_").replace(" ","_")}_Results.csv',
-                                mode='w',header=True,index=True,float_format='%.3f')
-                else:
-                    DataFrame([current_row],columns=['KH_Vote_Count','KH_Vote_Pct','DT_Vote_Count','DT_Vote_Pct'],index=[extraction_time])\
-                        .to_csv(f'C:/Users/michael/Documents/Election_Statistics/2024_LIVE_PRESIDENTIAL_RESULTS/State_Summary_Results/{line.replace("-","_").replace(" ","_")}_Results.csv',
-                                mode='a',header=False,index=True,float_format='%.3f')
+                try:
+                    leading_candidate = lines[i+4]
+                    if('Harris' in leading_candidate):
+                        current_row:list = [
+                                int(findall(r"[0-9]+",lines[i+5].replace(',','').replace('-','0'))[0]),
+                                float(findall(r"[0-9]+",lines[i+5].replace(',','').replace('-','0'))[1]),
+                                int(findall(r"[0-9]+",lines[i+8].replace(',','').replace('-','0'))[0]),
+                                float(findall(r"[0-9]+",lines[i+8].replace(',','').replace('-','0'))[1]),
+                                float(findall(r"[0-9]+[\.]{0,1}[0-9]{0,2}\%",lines[i+10])[0].replace('%',''))
+                            ]
+                    else:
+                        current_row:list = [
+                                int(findall(r"[0-9]+",lines[i+8].replace(',','').replace('-','0'))[0]),
+                                float(findall(r"[0-9]+",lines[i+8].replace(',','').replace('-','0'))[1]),
+                                int(findall(r"[0-9]+",lines[i+5].replace(',','').replace('-','0'))[0]),
+                                float(findall(r"[0-9]+",lines[i+5].replace(',','').replace('-','0'))[1]),
+                                float(findall(r"[0-9]+[\.]+[0-9]+\%",lines[i+10].replace(',','').replace('-','0'))[0].replace('%',''))
+                            ]
+                
+                    if(first_iteration):
+                        DataFrame([current_row],columns=['KH_Vote_Count','KH_Vote_Pct','DT_Vote_Count','DT_Vote_Pct','Pct_Report'],index=[extraction_time])\
+                            .to_csv(f'C:/Users/michael/Documents/Election_Statistics/2024_LIVE_PRESIDENTIAL_RESULTS/State_Summary_Results/{line.upper().replace("-","_").replace(" ","_")}_Results.csv',
+                                    mode='w',header=True,index=True,float_format='%.3f')
+                    else:
+                        DataFrame([current_row],columns=['KH_Vote_Count','KH_Vote_Pct','DT_Vote_Count','DT_Vote_Pct','Pct_Report'],index=[extraction_time])\
+                            .to_csv(f'C:/Users/michael/Documents/Election_Statistics/2024_LIVE_PRESIDENTIAL_RESULTS/State_Summary_Results/{line.upper().replace("-","_").replace(" ","_")}_Results.csv',
+                                    mode='a',header=False,index=True,float_format='%.3f')
+                except:pass
         if('Sponsored Stories' in line and all_states_found):
             break
     first_iteration:bool = False

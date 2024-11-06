@@ -5,7 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from datetime import datetime
 from pandas import DataFrame
 from random import random
-from re import findall,sub
+from re import search,sub
 from time import sleep
 
 # WebDriver Chrome
@@ -24,9 +24,14 @@ options.add_argument("--disable-plugins-discovery")
 options.add_argument("--start-maximized")
 
 driver:Chrome = Chrome(options=options)
-sleep(4.53298)
-driver.get("https://www.azcentral.com/elections/results/2024-11-05/race/0/arizona")
+#sleep(4.53298)
+driver.get("https://www.nbcnews.com/politics/2024-elections/arizona-president-results")
+wait:WebDriverWait = WebDriverWait(driver,(random()*4)+2)
+page:str = wait.until(
+        EC.presence_of_element_located(
+            (By.XPATH, "/html/body"))).text
 first_iteration:bool = True
+counties_found:bool = False
 while True:
     sleep(random()*13.329104+11.430829)
     if(random()<0.0025):
@@ -41,37 +46,38 @@ while True:
     print(f"{extraction_time.strftime('%D, %H:%M:%S.%f')}")
     counties_found:bool = False
     for i,line in enumerate(lines):
-        if('Select a county to jump to results' in line and not(counties_found)):
+        if('APACHE' in line and not(counties_found)):
             counties_found:bool = True
-        if(
-            ("County" in line)and
-            (not('Election' in line))and
-            (counties_found)
-        ):
-            current_row:list = []
-            kamala_vote_line:str = lines[i+4]
-            kamala_vote_counts:list[str] = kamala_vote_line.split(' ')
-            current_row.append(int(kamala_vote_counts[0].replace('-','0').replace(',','').replace('%','')))
-            current_row.append(float(kamala_vote_counts[1].replace('-','0').replace(',','').replace('%','')))
-            trump_vote_line:str = lines[i+10]
-            trump_vote_counts:list[str] = trump_vote_line.split(' ')
-            current_row.append(int(trump_vote_counts[0].replace('-','0').replace(',','').replace('%','')))
-            current_row.append(float(trump_vote_counts[1].replace('-','0').replace(',','').replace('%','')))
-            current_row.append(float(findall(r"[0-9]{1,}[\.]{0,1}[0-9]{0,2}\%",lines[i+1].replace('-','0'))[0].replace('%','')))
-            third_party_vote_count:int = int(lines[i+6].split(' ')[0].replace('-','0').replace(',','').replace('%',''))+int(lines[i+8].split(' ')[0].replace('-','0').replace(',','').replace('%',''))
-            current_row.insert(0,
-                        int(trump_vote_counts[0].replace('-','0').replace(',','').replace('%',''))+int(kamala_vote_counts[0].replace('-','0').replace(',','').replace('%',''))+third_party_vote_count)
-            
-            if(first_iteration):
-                DataFrame([current_row],columns=['Total_Votes','KH_Vote_Count','KH_Vote_Pct','DT_Vote_Count','DT_Vote_Pct','Pct_Reported'],index=[extraction_time])\
-                    .to_csv(f'C:/Users/michael/Documents/Election_Statistics/2024_LIVE_PRESIDENTIAL_RESULTS/State_Details/Arizona/{line.replace("-","_").replace(" ","_")}.csv',
-                            mode='w',header=True,index=True,float_format='%.3f')
-                current_row:list = []
-            else:
-                DataFrame([current_row],columns=['Total_Votes','KH_Vote_Count','KH_Vote_Pct','DT_Vote_Count','DT_Vote_Pct','Pct_Reported'],index=[extraction_time])\
-                    .to_csv(f'C:/Users/michael/Documents/Election_Statistics/2024_LIVE_PRESIDENTIAL_RESULTS/State_Details/Arizona/{line.replace("-","_").replace(" ","_")}.csv',
-                            mode='a',header=False,index=True,float_format='%.3f')
-        if('Yuma' in line):
-            first_iteration:bool = False
+        if('Exit Polls' in line):
             break
-    first_iteration:bool = False
+        if(counties_found and line.upper().__eq__(line) and not(search(r"[0-9]+",line)) and not(line.isspace()) and len(line)>3):
+            try:
+                leading_candidate = lines[i+3]
+                if('Harris' in leading_candidate):
+                    current_row = [
+                        int(search(r"[0-9]+",sub(r"[A-Za-z]+","",lines[i+1]).replace(',','').replace('.','').replace('%','')).group()),
+                        int(search(r"[0-9]+",lines[i+5].replace(',','').replace('.','').replace('%','')).group()),
+                        float(search(r"[0-9]+\.[0-9]+",lines[i+6]).group()),
+                        int(search(r"[0-9]+",lines[i+9].replace(',','').replace('.','').replace('%','')).group()),
+                        float(search(r"[0-9]+\.[0-9]+",lines[i+10]).group()),
+                        float(search(r"[0-9]+[\.]{0,1}[0-9]{0,2}\%",lines[i+2]).group().replace(' ','').replace('%',''))
+                    ]
+                else:
+                    current_row = [
+                        int(search(r"[0-9]+",sub(r"[A-Za-z]+","",lines[i+1]).replace(',','').replace('.','').replace('%','')).group()),
+                        int(search(r"[0-9]+",lines[i+9].replace(',','').replace('.','').replace('%','')).group()),
+                        float(search(r"[0-9]+\.[0-9]+",lines[i+10]).group()),
+                        int(search(r"[0-9]+",lines[i+5].replace(',','').replace('.','').replace('%','')).group()),
+                        float(search(r"[0-9]+\.[0-9]+",lines[i+6]).group()),
+                        float(search(r"[0-9]+[\.]{0,1}[0-9]{0,2}\%",lines[i+2]).group().replace(' ','').replace('%',''))
+                    ]
+                if(first_iteration):
+                    DataFrame([current_row],columns=['Total_Votes','KH_Vote_Count','KH_Vote_Pct','DT_Vote_Count','DT_Vote_Pct','Pct_Reported'],index=[extraction_time])\
+                        .to_csv(f'State_Details/Arizona/{line.replace("-","_").replace(" ","_")}_Results.csv',
+                                mode='w',header=True,index=True,float_format='%.3f')
+                    first_iteration:bool = False
+                else:
+                    DataFrame([current_row],columns=['Total_Votes','KH_Vote_Count','KH_Vote_Pct','DT_Vote_Count','DT_Vote_Pct','Pct_Reported'],index=[extraction_time])\
+                        .to_csv(f'State_Details/Arizona/{line.replace("-","_").replace(" ","_")}_Results.csv',
+                                mode='a',header=False,index=True,float_format='%.3f')
+            except:pass

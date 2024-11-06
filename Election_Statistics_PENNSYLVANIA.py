@@ -5,69 +5,79 @@ from selenium.webdriver.support import expected_conditions as EC
 from datetime import datetime
 from pandas import DataFrame
 from random import random
-from re import search
+from re import search,findall,sub
 from time import sleep
 
 # WebDriver Chrome
 options = ChromeOptions()
-options.add_argument('--headless=new')
+#options.add_argument('--headless=new')
 # adding argument to disable the AutomationControlled flag 
 options.add_argument("--disable-blink-features=AutomationControlled") 
 # exclude the collection of enable-automation switches 
 options.add_experimental_option("excludeSwitches", ["enable-automation"]) 
 # turn-off userAutomationExtension 
-options.add_experimental_option("useAutomationExtension", False) 
-driver = Chrome(options=options)
-driver.get(f"https://www.electionreturns.pa.gov/General/CountyBreakDownResults?officeId=1&districtId=1&ElectionID=105&ElectionType=G&IsActive=1&isRetention=0")
+options.add_experimental_option("useAutomationExtension", False)
+options.add_argument('--disable-extensions')
+options.add_argument('--profile-directory=Default')
+options.add_argument("--incognito")
+options.add_argument("--disable-plugins-discovery")
+options.add_argument("--start-maximized")
 
-county_results:dict[str,list] = {}
+driver:Chrome = Chrome(options=options)
+#sleep(4.53298)
+driver.get("https://www.nbcnews.com/politics/2024-elections/pennsylvania-president-results")
+wait:WebDriverWait = WebDriverWait(driver,(random()*4)+2)
+page:str = wait.until(
+        EC.presence_of_element_located(
+            (By.XPATH, "/html/body"))).text
 first_iteration:bool = True
-
+counties_found:bool = False
 while True:
-    driver.refresh()
-    sleep(random()*42.4321987+random()*19.312087+5.192837)
+    sleep(random()*13.329104+11.430829)
+    if(random()<0.0025):
+        print('PAUSING')
+        sleep(75)
     wait:WebDriverWait = WebDriverWait(driver,(random()*4)+2)
     page:str = wait.until(
         EC.presence_of_element_located(
             (By.XPATH, "/html/body"))).text
-    extraction_time:datetime = datetime.now()
-    print(extraction_time.strftime('%D, %H:%M:%S.%f'))
     lines:list[str] = page.split('\n')
-    # PENNSYLVANIA COUNTY RESULTS
+    extraction_time:datetime = datetime.now()
+    print(f"{extraction_time.strftime('%D, %H:%M:%S.%f')}")
     counties_found:bool = False
     for i,line in enumerate(lines):
-        if(line.upper().__eq__(line) and not(counties_found)):
+        if('ADAMS' in line and not(counties_found)):
             counties_found:bool = True
-        if(
-            (line.upper().__eq__(line))and 
-            (counties_found)and 
-            (not('KAMALA' in line))and
-            (not('TRUMP' in line))and
-            (not('CHASE OLIVER' in line))and
-            (not('JILL STEIN' in line))and
-            (not('PRIVACY POLICY' in line))and
-            (not('COPYRIGHT' in line))and
-            (not('COMMONWEALTH' in line))and
-            (not('SECURITY POLICY' in line))and
-            (not('TESTING MODE' in line))and
-            (not(line.isspace()))and
-            (len(line)>0)
-        ):
-            county_results[line] = [
-                [
-                    extraction_time,
-                    float(search(r"[0-9]{1,3}\.[0-9]{1,2}\%",lines[i+4]).group().replace('%','')), # Kamala Harris Vote Percent
-                    int(search(r"Votes: .+",lines[i+4]).group().replace('%','').replace(',','').replace('Votes:','').replace(' ','').replace('(','').replace(')','')), # Kamala Harris Vote Count
-                    float(search(r"[0-9]{1,3}\.[0-9]{1,2}\%",lines[i+7]).group().replace('%','')), # Donald Trump Vote Percent
-                    int(search(r"Votes: .+",lines[i+7]).group().replace('%','').replace(',','').replace('Votes:','').replace(' ','').replace('(','').replace(')','')) # Donald Trump Vote Count
-                ] 
-                                            ]
-    if(first_iteration): 
-        for key in county_results.keys():
-            DataFrame(county_results[key],columns=['Extraction_Datetime','KH_Vote_Pct','KH_Vote_Count','DT_Vote_Pct','DT_Vote_Count']).set_index('Extraction_Datetime').to_csv(
-                f"State_Details/Pennsylvania/{key.upper().replace(' ','_')}_Results.csv",header=True,index=True,float_format='%.4f',mode='w') 
-        first_iteration:bool = False  
-    else:
-        for key in county_results.keys():
-            DataFrame(county_results[key],columns=['Extraction_Datetime','KH_Vote_Pct','KH_Vote_Count','DT_Vote_Pct','DT_Vote_Count']).set_index('Extraction_Datetime').to_csv(
-                f"State_Details/Pennsylvania/{key.upper().replace(' ','_')}_Results.csv",header=False,index=True,float_format='%.4f',mode='a')
+        if('Exit Polls' in line):
+            break
+        if(counties_found and line.upper().__eq__(line) and not(search(r"[0-9]+",line)) and not(line.isspace()) and len(line)>3):
+            leading_candidate = lines[i+3]
+            try:
+                if('Harris' in leading_candidate):
+                    current_row = [
+                        int(search(r"[0-9]+",sub(r"[A-Za-z]+","",lines[i+1]).replace(',','').replace('.','').replace('%','')).group()),
+                        int(search(r"[0-9]+",lines[i+5].replace(',','').replace('.','').replace('%','')).group()),
+                        float(search(r"[0-9]+\.[0-9]+",lines[i+6]).group()),
+                        int(search(r"[0-9]+",lines[i+9].replace(',','').replace('.','').replace('%','')).group()),
+                        float(search(r"[0-9]+\.[0-9]+",lines[i+10]).group()),
+                        float(search(r"[0-9]+[\.]{0,1}[0-9]{0,2}\%",lines[i+2]).group().replace(' ','').replace('%',''))
+                    ]
+                else:
+                    current_row = [
+                        int(search(r"[0-9]+",sub(r"[A-Za-z]+","",lines[i+1]).replace(',','').replace('.','').replace('%','')).group()),
+                        int(search(r"[0-9]+",lines[i+9].replace(',','').replace('.','').replace('%','')).group()),
+                        float(search(r"[0-9]+\.[0-9]+",lines[i+10]).group()),
+                        int(search(r"[0-9]+",lines[i+5].replace(',','').replace('.','').replace('%','')).group()),
+                        float(search(r"[0-9]+\.[0-9]+",lines[i+6]).group()),
+                        float(search(r"[0-9]+[\.]{0,1}[0-9]{0,2}\%",lines[i+2]).group().replace(' ','').replace('%',''))
+                    ]
+                if(first_iteration):
+                    DataFrame([current_row],columns=['Total_Votes','KH_Vote_Count','KH_Vote_Pct','DT_Vote_Count','DT_Vote_Pct','Pct_Reported'],index=[extraction_time])\
+                        .to_csv(f'State_Details/Pennsylvania/{line.replace("-","_").replace(" ","_")}_Results.csv',
+                                mode='w',header=True,index=True,float_format='%.3f')
+                    first_iteration:bool = False
+                else:
+                    DataFrame([current_row],columns=['Total_Votes','KH_Vote_Count','KH_Vote_Pct','DT_Vote_Count','DT_Vote_Pct','Pct_Reported'],index=[extraction_time])\
+                        .to_csv(f'State_Details/Pennsylvania/{line.replace("-","_").replace(" ","_")}_Results.csv',
+                                mode='a',header=False,index=True,float_format='%.3f')
+            except:pass
