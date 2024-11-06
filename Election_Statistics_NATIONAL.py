@@ -56,17 +56,17 @@ while True:
                     if('Harris' in leading_candidate):
                         current_row:list = [
                                 int(findall(r"[0-9]+",lines[i+5].replace(',','').replace('-','0'))[0]),
-                                float(findall(r"[0-9]+",lines[i+5].replace(',','').replace('-','0'))[1]),
+                                float(findall(r"[0-9]+[\.]+[0-9]+",lines[i+5].replace(',','').replace('-','0'))[1]),
                                 int(findall(r"[0-9]+",lines[i+8].replace(',','').replace('-','0'))[0]),
-                                float(findall(r"[0-9]+",lines[i+8].replace(',','').replace('-','0'))[1]),
+                                float(findall(r"[0-9]+[\.]+[0-9]+",lines[i+8].replace(',','').replace('-','0'))[1]),
                                 float(findall(r"[0-9]+[\.]{0,1}[0-9]{0,2}\%",lines[i+10])[0].replace('%',''))
                             ]
                     else:
                         current_row:list = [
                                 int(findall(r"[0-9]+",lines[i+8].replace(',','').replace('-','0'))[0]),
-                                float(findall(r"[0-9]+",lines[i+8].replace(',','').replace('-','0'))[1]),
+                                float(findall(r"[0-9]+[\.]+[0-9]+",lines[i+8].replace(',','').replace('-','0'))[1]),
                                 int(findall(r"[0-9]+",lines[i+5].replace(',','').replace('-','0'))[0]),
-                                float(findall(r"[0-9]+",lines[i+5].replace(',','').replace('-','0'))[1]),
+                                float(findall(r"[0-9]+[\.]+[0-9]+",lines[i+5].replace(',','').replace('-','0'))[1]),
                                 float(findall(r"[0-9]+[\.]+[0-9]+\%",lines[i+10].replace(',','').replace('-','0'))[0].replace('%',''))
                             ]
                 

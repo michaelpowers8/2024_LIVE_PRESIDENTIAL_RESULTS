@@ -57,18 +57,18 @@ while True:
                     current_row = [
                         int(search(r"[0-9]+",sub(r"[A-Za-z]+","",lines[i+1]).replace(',','').replace('.','').replace('%','')).group()),
                         int(search(r"[0-9]+",lines[i+5].replace(',','').replace('.','').replace('%','')).group()),
-                        float(search(r"[0-9]+\.[0-9]+",lines[i+6]).group()),
+                        float(search(r"[0-9]+[\.]{0,1}[0-9]+",lines[i+6]).group()),
                         int(search(r"[0-9]+",lines[i+9].replace(',','').replace('.','').replace('%','')).group()),
-                        float(search(r"[0-9]+\.[0-9]+",lines[i+10]).group()),
+                        float(search(r"[0-9]+[\.]{0,1}[0-9]+",lines[i+10]).group()),
                         float(search(r"[0-9]+[\.]{0,1}[0-9]{0,2}\%",lines[i+2]).group().replace(' ','').replace('%',''))
                     ]
                 else:
                     current_row = [
                         int(search(r"[0-9]+",sub(r"[A-Za-z]+","",lines[i+1]).replace(',','').replace('.','').replace('%','')).group()),
                         int(search(r"[0-9]+",lines[i+9].replace(',','').replace('.','').replace('%','')).group()),
-                        float(search(r"[0-9]+\.[0-9]+",lines[i+10]).group()),
+                        float(search(r"[0-9]+[\.]{0,1}[0-9]+",lines[i+10]).group()),
                         int(search(r"[0-9]+",lines[i+5].replace(',','').replace('.','').replace('%','')).group()),
-                        float(search(r"[0-9]+\.[0-9]+",lines[i+6]).group()),
+                        float(search(r"[0-9]+[\.]{0,1}[0-9]+",lines[i+6]).group()),
                         float(search(r"[0-9]+[\.]{0,1}[0-9]{0,2}\%",lines[i+2]).group().replace(' ','').replace('%',''))
                     ]
                 if(first_iteration):
