@@ -7,3 +7,4 @@
 *.txt
 *.html
 *.pkg
+!Negative_Vote_Count_All_States.txt
