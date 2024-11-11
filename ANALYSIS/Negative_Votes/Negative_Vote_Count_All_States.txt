@@ -36,6 +36,10 @@ Kentucky
 Harris Negative Total: -10571.0
 Trump Negative Total: 0.0
 
+Maryland
+Harris Negative Total: -64.0
+Trump Negative Total: -14.0
+
 Massachusetts
 Harris Negative Total: -1566.0
 Trump Negative Total: -3621.0
@@ -61,8 +65,8 @@ Harris Negative Total: -667.0
 Trump Negative Total: -1698.0
 
 New_Hampshire
-Harris Negative Total: -6.0
-Trump Negative Total: 0.0
+Harris Negative Total: -9.0
+Trump Negative Total: -2.0
 
 New_Jersey
 Harris Negative Total: -6684.0

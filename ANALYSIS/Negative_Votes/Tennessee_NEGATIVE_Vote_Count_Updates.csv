@@ -1,4 +1,4 @@
-,Datetime_Extraction,Total_Votes,KH_Vote_Count,KH_Vote_Pct,DT_Vote_Count,DT_Vote_Pct,Pct_Reported,Additional_Votes_Since_Last_Update,Additional_Trump_Votes_Since_Last_Update,Additional_Harris_Votes_Since_Last_Update,Pct_New_Votes_For_Trump,Pct_New_Votes_For_Harris
-187,2024-11-06 00:12:09.513078,3010117.00,1048333.00,34.00,1961784.00,64.00,97.99,10.00,5.00,5.00,50.00,50.00
-188,2024-11-06 00:36:22.255607,3010087.00,1048303.00,34.00,1961784.00,64.00,98.85,-30.00,0.00,-30.00,-0.00,100.00
-189,2024-11-06 09:52:05.966561,3019538.00,1055039.00,34.00,1964499.00,64.00,99.00,9451.00,2715.00,6736.00,28.73,71.27
+,Datetime_Extraction,Total_Votes,State,KH_Vote_Count,KH_Vote_Pct,DT_Vote_Count,DT_Vote_Pct,Pct_Reported,Additional_Votes_Since_Last_Update,Additional_Trump_Votes_Since_Last_Update,Additional_Harris_Votes_Since_Last_Update,Pct_New_Votes_For_Trump,Pct_New_Votes_For_Harris
+187,2024-11-06 00:12:09.513078,3010117.00,Tennessee,1048333.00,34.00,1961784.00,64.00,97.99,10.00,5.00,5.00,50.00,50.00
+188,2024-11-06 00:36:22.255607,3010087.00,Tennessee,1048303.00,34.00,1961784.00,64.00,98.85,-30.00,0.00,-30.00,-0.00,100.00
+189,2024-11-06 09:52:05.966561,3019538.00,Tennessee,1055039.00,34.00,1964499.00,64.00,99.00,9451.00,2715.00,6736.00,28.73,71.27

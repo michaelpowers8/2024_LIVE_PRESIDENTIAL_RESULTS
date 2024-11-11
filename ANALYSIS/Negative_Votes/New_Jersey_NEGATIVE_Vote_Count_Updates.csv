@@ -1,4 +1,4 @@
-,Datetime_Extraction,Total_Votes,KH_Vote_Count,KH_Vote_Pct,DT_Vote_Count,DT_Vote_Pct,Pct_Reported,Additional_Votes_Since_Last_Update,Additional_Trump_Votes_Since_Last_Update,Additional_Harris_Votes_Since_Last_Update,Pct_New_Votes_For_Trump,Pct_New_Votes_For_Harris
-120,2024-11-06 13:31:16.634084,4005133.00,2090864.00,51.00,1914269.00,46.00,94.13,1082.00,889.00,193.00,82.16,17.84
-121,2024-11-06 14:10:18.921730,3971264.00,2084180.00,51.00,1887084.00,46.00,93.30,-33869.00,-27185.00,-6684.00,80.27,19.73
-122,2024-11-06 14:15:04.905998,3973527.00,2085773.00,51.00,1887754.00,46.00,93.35,2263.00,670.00,1593.00,29.61,70.39
+,Datetime_Extraction,Total_Votes,State,KH_Vote_Count,KH_Vote_Pct,DT_Vote_Count,DT_Vote_Pct,Pct_Reported,Additional_Votes_Since_Last_Update,Additional_Trump_Votes_Since_Last_Update,Additional_Harris_Votes_Since_Last_Update,Pct_New_Votes_For_Trump,Pct_New_Votes_For_Harris
+120,2024-11-06 13:31:16.634084,4005133.00,New_Jersey,2090864.00,51.00,1914269.00,46.00,94.13,1082.00,889.00,193.00,82.16,17.84
+121,2024-11-06 14:10:18.921730,3971264.00,New_Jersey,2084180.00,51.00,1887084.00,46.00,93.30,-33869.00,-27185.00,-6684.00,80.27,19.73
+122,2024-11-06 14:15:04.905998,3973527.00,New_Jersey,2085773.00,51.00,1887754.00,46.00,93.35,2263.00,670.00,1593.00,29.61,70.39

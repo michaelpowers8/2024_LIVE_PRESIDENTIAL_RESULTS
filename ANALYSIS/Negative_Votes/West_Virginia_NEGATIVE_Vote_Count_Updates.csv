@@ -1,4 +1,4 @@
-,Datetime_Extraction,Total_Votes,KH_Vote_Count,KH_Vote_Pct,DT_Vote_Count,DT_Vote_Pct,Pct_Reported,Additional_Votes_Since_Last_Update,Additional_Trump_Votes_Since_Last_Update,Additional_Harris_Votes_Since_Last_Update,Pct_New_Votes_For_Trump,Pct_New_Votes_For_Harris
-92,2024-11-05 20:19:11.059684,480346.00,135957.00,27.00,344389.00,70.00,60.34,6266.00,4891.00,1375.00,78.06,21.94
-93,2024-11-05 20:20:50.078340,477014.00,134496.00,27.00,342518.00,70.00,59.93,-3332.00,-1871.00,-1461.00,56.15,43.85
-94,2024-11-05 20:21:19.747753,477989.00,134648.00,27.00,343341.00,70.00,60.05,975.00,823.00,152.00,84.41,15.59
+,Datetime_Extraction,Total_Votes,State,KH_Vote_Count,KH_Vote_Pct,DT_Vote_Count,DT_Vote_Pct,Pct_Reported,Additional_Votes_Since_Last_Update,Additional_Trump_Votes_Since_Last_Update,Additional_Harris_Votes_Since_Last_Update,Pct_New_Votes_For_Trump,Pct_New_Votes_For_Harris
+92,2024-11-05 20:19:11.059684,480346.00,West_Virginia,135957.00,27.00,344389.00,70.00,60.34,6266.00,4891.00,1375.00,78.06,21.94
+93,2024-11-05 20:20:50.078340,477014.00,West_Virginia,134496.00,27.00,342518.00,70.00,59.93,-3332.00,-1871.00,-1461.00,56.15,43.85
+94,2024-11-05 20:21:19.747753,477989.00,West_Virginia,134648.00,27.00,343341.00,70.00,60.05,975.00,823.00,152.00,84.41,15.59

@@ -1,4 +1,4 @@
-,Datetime_Extraction,Total_Votes,KH_Vote_Count,KH_Vote_Pct,DT_Vote_Count,DT_Vote_Pct,Pct_Reported,Additional_Votes_Since_Last_Update,Additional_Trump_Votes_Since_Last_Update,Additional_Harris_Votes_Since_Last_Update,Pct_New_Votes_For_Trump,Pct_New_Votes_For_Harris
-48,2024-11-05 19:54:24.412889,329694.00,173993.00,51.00,155701.00,46.00,63.66,4239.00,1136.00,3103.00,26.80,73.20
-49,2024-11-05 19:57:32.473916,329716.00,174121.00,51.00,155595.00,46.00,63.66,22.00,-106.00,128.00,-481.82,581.82
-50,2024-11-05 19:59:23.390924,340245.00,181132.00,51.00,159113.00,45.00,65.68,10529.00,3518.00,7011.00,33.41,66.59
+,Datetime_Extraction,Total_Votes,State,KH_Vote_Count,KH_Vote_Pct,DT_Vote_Count,DT_Vote_Pct,Pct_Reported,Additional_Votes_Since_Last_Update,Additional_Trump_Votes_Since_Last_Update,Additional_Harris_Votes_Since_Last_Update,Pct_New_Votes_For_Trump,Pct_New_Votes_For_Harris
+48,2024-11-05 19:54:24.412889,329694.00,Rhode_Island,173993.00,51.00,155701.00,46.00,63.66,4239.00,1136.00,3103.00,26.80,73.20
+49,2024-11-05 19:57:32.473916,329716.00,Rhode_Island,174121.00,51.00,155595.00,46.00,63.66,22.00,-106.00,128.00,-481.82,581.82
+50,2024-11-05 19:59:23.390924,340245.00,Rhode_Island,181132.00,51.00,159113.00,45.00,65.68,10529.00,3518.00,7011.00,33.41,66.59

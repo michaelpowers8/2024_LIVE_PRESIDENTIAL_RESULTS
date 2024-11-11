@@ -1,4 +1,4 @@
-,Datetime_Extraction,Total_Votes,KH_Vote_Count,KH_Vote_Pct,DT_Vote_Count,DT_Vote_Pct,Pct_Reported,Additional_Votes_Since_Last_Update,Additional_Trump_Votes_Since_Last_Update,Additional_Harris_Votes_Since_Last_Update,Pct_New_Votes_For_Trump,Pct_New_Votes_For_Harris
-150,2024-11-06 15:31:54.975445,355071.00,235705.00,64.00,119366.00,32.00,99.00,1.00,1.00,0.00,100.00,0.00
-151,2024-11-07 08:29:30.766513,355061.00,235700.00,64.00,119361.00,32.00,99.00,-10.00,-5.00,-5.00,50.00,50.00
-152,2024-11-07 13:17:54.674531,355077.00,235710.00,64.00,119367.00,32.00,99.00,16.00,6.00,10.00,37.50,62.50
+,Datetime_Extraction,Total_Votes,State,KH_Vote_Count,KH_Vote_Pct,DT_Vote_Count,DT_Vote_Pct,Pct_Reported,Additional_Votes_Since_Last_Update,Additional_Trump_Votes_Since_Last_Update,Additional_Harris_Votes_Since_Last_Update,Pct_New_Votes_For_Trump,Pct_New_Votes_For_Harris
+150,2024-11-06 15:31:54.975445,355071.00,Vermont,235705.00,64.00,119366.00,32.00,99.00,1.00,1.00,0.00,100.00,0.00
+151,2024-11-07 08:29:30.766513,355061.00,Vermont,235700.00,64.00,119361.00,32.00,99.00,-10.00,-5.00,-5.00,50.00,50.00
+152,2024-11-07 13:17:54.674531,355077.00,Vermont,235710.00,64.00,119367.00,32.00,99.00,16.00,6.00,10.00,37.50,62.50

@@ -1,4 +1,4 @@
-,Datetime_Extraction,Total_Votes,KH_Vote_Count,KH_Vote_Pct,DT_Vote_Count,DT_Vote_Pct,Pct_Reported,Additional_Votes_Since_Last_Update,Additional_Trump_Votes_Since_Last_Update,Additional_Harris_Votes_Since_Last_Update,Pct_New_Votes_For_Trump,Pct_New_Votes_For_Harris
-83,2024-11-05 23:07:15.513873,1534262.00,499043.00,31.00,1035219.00,66.00,99.00,4.00,3.00,1.00,75.00,25.00
-84,2024-11-06 00:43:36.382337,1534260.00,499043.00,31.00,1035217.00,66.00,99.00,-2.00,-2.00,0.00,100.00,-0.00
-85,2024-11-08 17:51:30.030591,1535812.00,499599.00,31.00,1036213.00,66.00,99.00,1552.00,996.00,556.00,64.18,35.82
+,Datetime_Extraction,Total_Votes,State,KH_Vote_Count,KH_Vote_Pct,DT_Vote_Count,DT_Vote_Pct,Pct_Reported,Additional_Votes_Since_Last_Update,Additional_Trump_Votes_Since_Last_Update,Additional_Harris_Votes_Since_Last_Update,Pct_New_Votes_For_Trump,Pct_New_Votes_For_Harris
+83,2024-11-05 23:07:15.513873,1534262.00,Oklahoma,499043.00,31.00,1035219.00,66.00,99.00,4.00,3.00,1.00,75.00,25.00
+84,2024-11-06 00:43:36.382337,1534260.00,Oklahoma,499043.00,31.00,1035217.00,66.00,99.00,-2.00,-2.00,0.00,100.00,-0.00
+85,2024-11-08 17:51:30.030591,1535812.00,Oklahoma,499599.00,31.00,1036213.00,66.00,99.00,1552.00,996.00,556.00,64.18,35.82

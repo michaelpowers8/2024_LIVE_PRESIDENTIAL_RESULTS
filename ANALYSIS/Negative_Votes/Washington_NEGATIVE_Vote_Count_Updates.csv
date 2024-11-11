@@ -1,4 +1,4 @@
-,Datetime_Extraction,Total_Votes,KH_Vote_Count,KH_Vote_Pct,DT_Vote_Count,DT_Vote_Pct,Pct_Reported,Additional_Votes_Since_Last_Update,Additional_Trump_Votes_Since_Last_Update,Additional_Harris_Votes_Since_Last_Update,Pct_New_Votes_For_Trump,Pct_New_Votes_For_Harris
-35,2024-11-06 19:06:22.670928,2742221.00,1651672.00,58.00,1090549.00,38.00,78.15,2670.00,1916.00,754.00,71.76,28.24
-36,2024-11-06 19:09:35.149635,2739903.00,1651086.00,58.00,1088817.00,38.00,78.15,-2318.00,-1732.00,-586.00,74.72,25.28
-37,2024-11-06 19:25:08.217277,2756645.00,1659859.00,58.00,1096786.00,38.00,78.19,16742.00,7969.00,8773.00,47.60,52.40
+,Datetime_Extraction,Total_Votes,State,KH_Vote_Count,KH_Vote_Pct,DT_Vote_Count,DT_Vote_Pct,Pct_Reported,Additional_Votes_Since_Last_Update,Additional_Trump_Votes_Since_Last_Update,Additional_Harris_Votes_Since_Last_Update,Pct_New_Votes_For_Trump,Pct_New_Votes_For_Harris
+35,2024-11-06 19:06:22.670928,2742221.00,Washington,1651672.00,58.00,1090549.00,38.00,78.15,2670.00,1916.00,754.00,71.76,28.24
+36,2024-11-06 19:09:35.149635,2739903.00,Washington,1651086.00,58.00,1088817.00,38.00,78.15,-2318.00,-1732.00,-586.00,74.72,25.28
+37,2024-11-06 19:25:08.217277,2756645.00,Washington,1659859.00,58.00,1096786.00,38.00,78.19,16742.00,7969.00,8773.00,47.60,52.40

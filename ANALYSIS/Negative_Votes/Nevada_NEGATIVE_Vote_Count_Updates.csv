@@ -1,4 +1,4 @@
-,Datetime_Extraction,Total_Votes,KH_Vote_Count,KH_Vote_Pct,DT_Vote_Count,DT_Vote_Pct,Pct_Reported,Additional_Votes_Since_Last_Update,Additional_Trump_Votes_Since_Last_Update,Additional_Harris_Votes_Since_Last_Update,Pct_New_Votes_For_Trump,Pct_New_Votes_For_Harris
-8,2024-11-06 00:03:48.543964,1001094.00,483190.00,47.00,517904.00,50.00,75.08,2741.00,2017.00,724.00,73.59,26.41
-9,2024-11-06 00:04:30.477254,998729.00,482523.00,47.00,516206.00,50.00,74.90,-2365.00,-1698.00,-667.00,71.80,28.20
-10,2024-11-06 00:05:42.058260,1001216.00,483232.00,47.00,517984.00,50.00,75.09,2487.00,1778.00,709.00,71.49,28.51
+,Datetime_Extraction,Total_Votes,State,KH_Vote_Count,KH_Vote_Pct,DT_Vote_Count,DT_Vote_Pct,Pct_Reported,Additional_Votes_Since_Last_Update,Additional_Trump_Votes_Since_Last_Update,Additional_Harris_Votes_Since_Last_Update,Pct_New_Votes_For_Trump,Pct_New_Votes_For_Harris
+8,2024-11-06 00:03:48.543964,1001094.00,Nevada,483190.00,47.00,517904.00,50.00,75.08,2741.00,2017.00,724.00,73.59,26.41
+9,2024-11-06 00:04:30.477254,998729.00,Nevada,482523.00,47.00,516206.00,50.00,74.90,-2365.00,-1698.00,-667.00,71.80,28.20
+10,2024-11-06 00:05:42.058260,1001216.00,Nevada,483232.00,47.00,517984.00,50.00,75.09,2487.00,1778.00,709.00,71.49,28.51

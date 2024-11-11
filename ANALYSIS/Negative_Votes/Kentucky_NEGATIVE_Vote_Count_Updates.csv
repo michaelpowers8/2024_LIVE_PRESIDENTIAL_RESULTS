@@ -1,4 +1,4 @@
-,Datetime_Extraction,Total_Votes,KH_Vote_Count,KH_Vote_Pct,DT_Vote_Count,DT_Vote_Pct,Pct_Reported,Additional_Votes_Since_Last_Update,Additional_Trump_Votes_Since_Last_Update,Additional_Harris_Votes_Since_Last_Update,Pct_New_Votes_For_Trump,Pct_New_Votes_For_Harris
-2,2024-11-05 17:07:29.308887,38727.00,24838.00,63.00,13889.00,35.00,0.00,30556.00,12405.00,18151.00,40.60,59.40
-3,2024-11-05 17:17:07.704557,41817.00,14267.00,33.00,27550.00,65.00,0.00,3090.00,13661.00,-10571.00,442.10,-342.10
-4,2024-11-05 17:20:01.722251,46376.00,15347.00,32.00,31029.00,66.00,0.00,4559.00,3479.00,1080.00,76.31,23.69
+,Datetime_Extraction,Total_Votes,State,KH_Vote_Count,KH_Vote_Pct,DT_Vote_Count,DT_Vote_Pct,Pct_Reported,Additional_Votes_Since_Last_Update,Additional_Trump_Votes_Since_Last_Update,Additional_Harris_Votes_Since_Last_Update,Pct_New_Votes_For_Trump,Pct_New_Votes_For_Harris
+2,2024-11-05 17:07:29.308887,38727.00,Kentucky,24838.00,63.00,13889.00,35.00,0.00,30556.00,12405.00,18151.00,40.60,59.40
+3,2024-11-05 17:17:07.704557,41817.00,Kentucky,14267.00,33.00,27550.00,65.00,0.00,3090.00,13661.00,-10571.00,442.10,-342.10
+4,2024-11-05 17:20:01.722251,46376.00,Kentucky,15347.00,32.00,31029.00,66.00,0.00,4559.00,3479.00,1080.00,76.31,23.69
