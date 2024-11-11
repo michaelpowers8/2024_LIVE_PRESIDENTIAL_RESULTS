@@ -1,145 +1,145 @@
 Here is a list of every single state that had at least one instance of negative vote updates followed by the total negative votes that occurred for each major candidate. I think this is worth investigating in my opinion:
 
 Arkansas
-Harris Negative Total: -95.0
-Trump Negative Total: -8205.0
+Harris Negative Total: -95
+Trump Negative Total: -8,205
 
 Connecticut
-Harris Negative Total: -5977.0
-Trump Negative Total: -3844.0
+Harris Negative Total: -5,977
+Trump Negative Total: -3,844
 
 Florida
-Harris Negative Total: -3858.0
-Trump Negative Total: -2184.0
+Harris Negative Total: -3,858
+Trump Negative Total: -2,184
 
 Georgia
-Harris Negative Total: -1049.0
-Trump Negative Total: -17.0
+Harris Negative Total: -1,049
+Trump Negative Total: -17
 
 Idaho
-Harris Negative Total: -2299.0
-Trump Negative Total: 0.0
+Harris Negative Total: -2,299
+Trump Negative Total: 0
 
 Indiana
-Harris Negative Total: -11229.0
-Trump Negative Total: -616.0
+Harris Negative Total: -11,229
+Trump Negative Total: -616
 
 Iowa
-Harris Negative Total: -1.0
-Trump Negative Total: 0.0
+Harris Negative Total: -1
+Trump Negative Total: 0
 
 Kansas
-Harris Negative Total: -223.0
-Trump Negative Total: -207.0
+Harris Negative Total: -223
+Trump Negative Total: -207
 
 Kentucky
-Harris Negative Total: -10571.0
-Trump Negative Total: 0.0
+Harris Negative Total: -10,571
+Trump Negative Total: 0
 
 Maryland
-Harris Negative Total: -64.0
-Trump Negative Total: -14.0
+Harris Negative Total: -64
+Trump Negative Total: -14
 
 Massachusetts
-Harris Negative Total: -1566.0
-Trump Negative Total: -3621.0
+Harris Negative Total: -1,566
+Trump Negative Total: -3,621
 
 Michigan
-Harris Negative Total: -91717.0
-Trump Negative Total: -166812.0
+Harris Negative Total: -91,717
+Trump Negative Total: -166,812
 
 Minnesota
-Harris Negative Total: -14959.0
-Trump Negative Total: -10394.0
+Harris Negative Total: -14,959
+Trump Negative Total: -10,394
 
 Mississippi
-Harris Negative Total: 0.0
-Trump Negative Total: -2874.0
+Harris Negative Total: 0
+Trump Negative Total: -2,874
 
 Montana
-Harris Negative Total: -364.0
-Trump Negative Total: -2552.0
+Harris Negative Total: -364
+Trump Negative Total: -2,552
 
 Nevada
-Harris Negative Total: -667.0
-Trump Negative Total: -1698.0
+Harris Negative Total: -667
+Trump Negative Total: -1,698
 
 New_Hampshire
-Harris Negative Total: -9.0
-Trump Negative Total: -2.0
+Harris Negative Total: -9
+Trump Negative Total: -2
 
 New_Jersey
-Harris Negative Total: -6684.0
-Trump Negative Total: -27185.0
+Harris Negative Total: -6,684
+Trump Negative Total: -27,185
 
 New_Mexico
-Harris Negative Total: -73888.0
-Trump Negative Total: -67017.0
+Harris Negative Total: -73,888
+Trump Negative Total: -67,017
 
 New_York
-Harris Negative Total: -68042.0
-Trump Negative Total: -45600.0
+Harris Negative Total: -68,042
+Trump Negative Total: -45,600
 
 North_Dakota
-Harris Negative Total: -478.0
-Trump Negative Total: -717.0
+Harris Negative Total: -478
+Trump Negative Total: -717
 
 Ohio
-Harris Negative Total: -888.0
-Trump Negative Total: -3220.0
+Harris Negative Total: -888
+Trump Negative Total: -3,220
 
 Oklahoma
-Harris Negative Total: 0.0
-Trump Negative Total: -2.0
+Harris Negative Total: 0
+Trump Negative Total: -2
 
 Oregon
-Harris Negative Total: -81723.0
-Trump Negative Total: -65952.0
+Harris Negative Total: -81,723
+Trump Negative Total: -65,952
 
 Pennsylvania
-Harris Negative Total: -4265.0
-Trump Negative Total: -1159.0
+Harris Negative Total: -4,265
+Trump Negative Total: -1,159
 
 Rhode_Island
-Harris Negative Total: 0.0
-Trump Negative Total: -106.0
+Harris Negative Total: 0
+Trump Negative Total: -106
 
 South_Carolina
-Harris Negative Total: -206.0
-Trump Negative Total: -1393.0
+Harris Negative Total: -206
+Trump Negative Total: -1,393
 
 South_Dakota
-Harris Negative Total: -53.0
-Trump Negative Total: -24.0
+Harris Negative Total: -53
+Trump Negative Total: -24
 
 Tennessee
-Harris Negative Total: -30.0
-Trump Negative Total: 0.0
+Harris Negative Total: -30
+Trump Negative Total: 0
 
 Texas
-Harris Negative Total: -326.0
-Trump Negative Total: -358.0
+Harris Negative Total: -326
+Trump Negative Total: -358
 
 Vermont
-Harris Negative Total: -5.0
-Trump Negative Total: -5.0
+Harris Negative Total: -5
+Trump Negative Total: -5
 
 Virginia
-Harris Negative Total: -2371.0
-Trump Negative Total: -5422.0
+Harris Negative Total: -2,371
+Trump Negative Total: -5,422
 
 Washington
-Harris Negative Total: -586.0
-Trump Negative Total: -1732.0
+Harris Negative Total: -586
+Trump Negative Total: -1,732
 
 West_Virginia
-Harris Negative Total: -1461.0
-Trump Negative Total: -1871.0
+Harris Negative Total: -1,461
+Trump Negative Total: -1,871
 
 Wisconsin
-Harris Negative Total: -686.0
-Trump Negative Total: -478.0
+Harris Negative Total: -686
+Trump Negative Total: -478
 
 Wyoming
-Harris Negative Total: -3652.0
-Trump Negative Total: 0.0
+Harris Negative Total: -3,652
+Trump Negative Total: 0
